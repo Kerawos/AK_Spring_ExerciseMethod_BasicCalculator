@@ -9,6 +9,10 @@ public class OperationModel {
     public OperationModel() {
     }
 
+    public OperationModel(int a) {
+        this.a = a;
+    }
+
     public OperationModel(int a, int b) {
         this.a = a;
         this.b = b;

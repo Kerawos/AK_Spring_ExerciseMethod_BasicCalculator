@@ -3,6 +3,7 @@ package pl.akademiakodu.AK_Spring_ExerciseMethod_BasicCalculator.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import pl.akademiakodu.AK_Spring_ExerciseMethod_BasicCalculator.models.CalculatorAverage;
 import pl.akademiakodu.AK_Spring_ExerciseMethod_BasicCalculator.models.CalculatorSimple;
 import pl.akademiakodu.AK_Spring_ExerciseMethod_BasicCalculator.models.OperationModel;
 
@@ -10,6 +11,7 @@ import pl.akademiakodu.AK_Spring_ExerciseMethod_BasicCalculator.models.Operation
 public class CalculatorController {
 
     CalculatorSimple calculatorSimple = new CalculatorSimple();
+    CalculatorAverage calculatorAverage = new CalculatorAverage();
     OperationModel operationModel = new OperationModel();
 
     @GetMapping("/")
@@ -42,11 +44,33 @@ public class CalculatorController {
         return "index";
     }
 
+    @RequestMapping(params = "sqr", method = RequestMethod.POST)
+    public String sqrt(@ModelAttribute("operationModel")OperationModel operationModel, Model model) {
+        model.addAttribute("result", calculatorAverage.squareOf(operationModel.getA()));
+        return "index";
+    }
+
+    @RequestMapping(params = "ele", method = RequestMethod.POST)
+    public String elementOf(@ModelAttribute("operationModel")OperationModel operationModel, Model model) {
+        model.addAttribute("result", calculatorAverage.elementOf(operationModel.getA()));
+        return "index";
+    }
+
+    @RequestMapping(params = "prm", method = RequestMethod.POST)
+    public String prime(@ModelAttribute("operationModel")OperationModel operationModel, Model model) {
+        model.addAttribute("result", calculatorAverage.isPrimeNumber(operationModel.getA()));
+        return "index";
+    }
+
+    @RequestMapping(params = "fac", method = RequestMethod.POST)
+    public String factorial(@ModelAttribute("operationModel")OperationModel operationModel, Model model) {
+        model.addAttribute("result", calculatorAverage.factorial(operationModel.getA()));
+        return "index";
+    }
+
     @GetMapping("/desc")
     public String descGet(){
         return "desc";
     }
-
-
 
 }
