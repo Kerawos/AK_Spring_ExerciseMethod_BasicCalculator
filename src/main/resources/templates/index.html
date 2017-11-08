@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body bgcolor="#6699FF">
+<hr>
+    SIMPLE CALCULATOR
+    <br>
+    <hr>
+    <img src="img/simpleCalculatorNavigation.png" style="max-width:100%;">
+    <hr>
+    <br>
+    <form method="post" th:action="@{/}" th:object="${operationModel}">
+        <input type="text" th:field="*{a}" placeholder="0">     <input type="text" th:field="*{b}" placeholder="0">
+        <br>
+        CHOOSE OPERATION:
+        <br>
+            <input type="submit" class="button" name="add" value="+">
+            <input type="submit" class="button" name="sub" value="-">
+            <input type="submit" class="button" name="mul" value="*">
+            <input type="submit" class="button" name="div" value="/">
+        <br>
+        RESULT: <p type="text" th:text="${result}" type="text" >
+    </form>
+<hr>
+</body>
+</html>
