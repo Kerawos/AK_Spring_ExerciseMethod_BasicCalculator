@@ -26,7 +26,7 @@ public class CalculatorController {
 
     @RequestMapping(params = "sub", method = RequestMethod.POST)
     public String subtract(@ModelAttribute("operationModel")OperationModel operationModel, Model model) {
-        model.addAttribute("result", calculatorSimple.subtrackt(operationModel.getA(), operationModel.getB()));
+        model.addAttribute("result", calculatorSimple.subtract(operationModel.getA(), operationModel.getB()));
         return "index";
     }
 

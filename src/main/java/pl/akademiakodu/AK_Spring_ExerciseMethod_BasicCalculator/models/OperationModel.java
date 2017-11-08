@@ -1,5 +1,6 @@
 package pl.akademiakodu.AK_Spring_ExerciseMethod_BasicCalculator.models;
 
+//holder for data
 public class OperationModel {
 
     private int a;
