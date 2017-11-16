@@ -1,4 +1,4 @@
-Method exercise - basic by AkademiaKodu.pl 2017
+#Java Basic by AkademiaKodu.pl 2017
 'Simple Calculator'
 
 Your task is to implements basic calculator methods like add, subtract, multiplication and division. Make those methods 
