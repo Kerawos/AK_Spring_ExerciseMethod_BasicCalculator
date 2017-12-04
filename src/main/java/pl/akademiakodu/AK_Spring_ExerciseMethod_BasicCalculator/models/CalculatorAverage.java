@@ -1,16 +1,31 @@
 package pl.akademiakodu.AK_Spring_ExerciseMethod_BasicCalculator.models;
 
+/**
+ * Import section
+ */
+import org.springframework.stereotype.Service;
+
+/**
+ * This service is responsible for average mathematical calculations
+ */
+@Service
 public class CalculatorAverage {
 
+    /**
+     * Method calculate mathematical square of digit
+     * @param a user input
+     * @return square of a
+     */
     public int squareOf(int a){
-//        //todo implement method
-//        return 0;
         return a * a;
     }
 
+    /**
+     * Method calculate mathematical element of digit
+     * @param a user input
+     * @return element of a
+     */
     public int elementOf(int a){
-//        //todo implement method
-//        return 0;
         int result = 1;
         for (int i = 1; i < a; i++) {
             if (i*i==a || i*i>a){
@@ -21,10 +36,12 @@ public class CalculatorAverage {
         return result;
     }
 
-
+    /**
+     * Method calculate mathematical factorial of digit
+     * @param a user input
+     * @return factorial of a
+     */
     public int factorial(int a){
-//        //todo implement method
-//        return 0;
         int sum = 1;
         for (int i = 2; i <= a ; i++) {
             sum*=i;
@@ -32,9 +49,12 @@ public class CalculatorAverage {
         return sum;
     }
 
+    /**
+     * Method check if digit is a prime number
+     * @param a user input
+     * @return result
+     */
     public boolean isPrimeNumber(int a){
-//        //todo implement method
-//        return 0;
         if (a<2){
             throw new IllegalArgumentException("Number must be greater than 1");
         }
@@ -48,10 +68,5 @@ public class CalculatorAverage {
         }
         return true;
     }
-
-
-
-
-
 
 }
