@@ -1,27 +1,32 @@
 package pl.akademiakodu.AK_Spring_ExerciseMethod_BasicCalculator.models;
-
+/**
+ * Import section
+ */
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Class to test calculator basic service
+ */
 public class CalculatorSimpleTest {
 
     private static CalculatorSimple calculator;
 
-    @BeforeClass
-    public static void start(){
+    @BeforeClass public static void start(){
         calculator = new CalculatorSimple();
     }
 
-    @AfterClass
-    public static void stop(){
+    @AfterClass public static void stop(){
         calculator = null;
     }
 
-    @Test
-    public void operationTest(){
+    /**
+     * This test testing all methods in service
+     */
+    @Test public void operationBasicTest(){
         assertEquals(calculator.add(4,6),10);
         assertEquals(calculator.subtract(4,6),-2);
         assertEquals(calculator.multiplication(4,6),24);

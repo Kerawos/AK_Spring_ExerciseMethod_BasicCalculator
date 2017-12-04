@@ -1,27 +1,33 @@
 package pl.akademiakodu.AK_Spring_ExerciseMethod_BasicCalculator.models;
 
+/**
+ * Import section
+ */
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Class to test calculator average service
+ */
 public class CalculatorAverageTest {
 
     private static CalculatorAverage calculator;
 
-    @BeforeClass
-    public static void start(){
+    @BeforeClass public static void start(){
         calculator = new CalculatorAverage();
     }
 
-    @AfterClass
-    public static void stop(){
+    @AfterClass public static void stop(){
         calculator = null;
     }
 
-    @Test
-    public void operationTest(){
+    /**
+     * This test testing all methods in service
+     */
+    @Test public void operationAverageTest(){
         assertEquals(calculator.squareOf(8),64);
         assertEquals(calculator.elementOf(9),3);
         assertEquals(calculator.factorial(5),120);
