@@ -21,9 +21,15 @@ public class CalculatorController {
     /**
      * Declarations
      */
-    @Autowired CalculatorSimple calculatorSimple;
-    @Autowired CalculatorAverage calculatorAverage;
+    private CalculatorSimple calculatorSimple;
+    private CalculatorAverage calculatorAverage;
     OperationModel operationModel = new OperationModel();
+
+    @Autowired
+    public CalculatorController(CalculatorSimple calculatorSimple, CalculatorAverage calculatorAverage){
+        this.calculatorSimple = calculatorSimple;
+        this.calculatorAverage = calculatorAverage;
+    }
 
     /**
      * Method geting main page, provide user inputs as operation model
